@@ -13,7 +13,6 @@ class ReusableCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onpress,
-
       child: Container(
         child: cardChild,
         //一行一列

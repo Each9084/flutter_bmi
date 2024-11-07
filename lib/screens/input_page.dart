@@ -7,6 +7,7 @@ import '../components/bottom_button.dart';
 import '../components/reusable_card.dart';
 import '../constants.dart';
 import '../components/icon_content.dart';
+import 'package:bmi_calculator_each/calculate_bmi.dart';
 
 enum genderType {
   male,
@@ -214,14 +215,18 @@ class _InputPageState extends State<InputPage> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                RoundIconButton(icon: FontAwesomeIcons.minus,
+                                RoundIconButton(
+                                    icon: FontAwesomeIcons.minus,
                                     onPressed: () {
                                       setState(() {
                                         age--;
                                       });
                                     }),
-                                SizedBox(width: 20,),
-                                RoundIconButton(icon: FontAwesomeIcons.plus,
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                RoundIconButton(
+                                    icon: FontAwesomeIcons.plus,
                                     onPressed: () {
                                       setState(() {
                                         age++;
@@ -235,9 +240,23 @@ class _InputPageState extends State<InputPage> {
                     )
                   ],
                 )),
-            BottomButton(buttonTitle: bottomText,onTap:(){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>ResultsPage()));
-            },)
+            BottomButton(
+              buttonTitle: bottomText,
+              onTap: () {
+                CalculateBmi calculateObject =
+                CalculateBmi(height: height, weight: weight);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            ResultsPage(
+                              bmiResult: calculateObject.calculateTheBMI(),
+                              resultText: calculateObject.getResult(),
+                              interpretation:calculateObject.getInterpretation()
+                              ,
+                            )));
+              },
+            )
           ],
         )
 
@@ -251,7 +270,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
-
-
-

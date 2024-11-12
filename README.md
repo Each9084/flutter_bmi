@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+这是其中一个模块,专门负责 bmi
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

@@ -2,7 +2,7 @@
 
 1.A new Flutter project.
 
-1这是其中一个模块,专门负责 bmi 未来还会整合1
+1这是其中一个模块,专门负责 bmi 未来还会整合11
 ## Getting Started
 
 This project is a starting point for a Flutter application.

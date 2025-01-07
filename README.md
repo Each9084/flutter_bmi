@@ -1,6 +1,6 @@
 # bmi_calculator_each
 
-1.A new Flutter project.11
+1.A new Flutter project.
 
 1这是其中一个模块,专门负责 bmi 未来还会整合12
 ## Getting Started
